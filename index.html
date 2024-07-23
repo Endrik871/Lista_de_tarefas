@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskCheck</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header-bg">
+        <header>
+
+            <div class="logo">
+                <img src="./imgs/icons8-check-96.png" class="logo-img" alt="" />
+                <h1 class="titulo">TaskCheck</h1>
+            </div>
+
+            <div class="input-pesquisa-container">
+                <input type="text" class="input-pesquisa" id="pesquisa" placeholder="digite o id de um usuário">
+                <button class="pesquisar"><img src="./imgs/icons8-search-30.png" alt=""></button>
+                <p>Digite um valor válido</p>
+            </div>
+
+    </div>
+
+    </header>
+    </div>
+
+    <main class="main">
+
+        <div class="titulo-checklist">
+            <h1>
+                Tarefas
+            </h1>
+
+            <img class="img-chack" src="./imgs/icons8-check-96.png" alt="">
+        </div>
+
+        <section class="container-todas-tarefas">
+            <div class="carregando"></div>
+            <div class="container-tarefas">
+
+                <div class="tarefa deletar-base">
+                    <div style="display: flex; align-items: center;">
+                        <p class="userId" >${item.userId}</p>
+                        <div class="dadosTodo">
+                            <h2 class="titulo-texto">${item.title}</h2>
+                            <p class="descricao">Sem descrição</p>
+                        </div>
+                    </div>
+                    <div style="display: flex;" class="botoes">
+                        <button class="completa"><img src="./imgs/icons8-check-30.png" alt="Completar"></button>
+                        <button class="editar"><img src="./imgs/icons8-edit-50.png" alt="Editar"></button>
+                        <button class="deletar"><img src="./imgs/icons8-trash-50.png" alt="Deletar"></button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="container-adicionar">
+
+            <div class="dados-adicionar">
+                <input type="text" name="" placeholder="digite o título da tarefa" id="titulo" class="input-add">
+                <input type="text" name="" placeholder="digite a descrição da tarefa" id="descricao" class="input-add">
+            </div>
+            <button class="adicionar">
+                <spam class="texto-add">Adicionar nova tarefa </spam>
+                <div class="carregando-nova"></div>
+            </button>
+
+        </section>
+
+        <dialog class="editar-modal-container">
+            <div class="editar-modal">
+                <h2>Editar tarefa</h2>
+                <div class="input-edit-container">
+                    <p class="text-editar id-editar">id : </p>
+                    <p class="text-editar user-editar">Usuário: </p>
+                    <label for="titulo">Título</label>
+                    <input type="text" name="" id="titulo" class="titulo-editar">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" name="" id="descricao" class="descricao-editar">
+                </div>
+
+                <button class="atualizar">Salvar</button>
+                <button class="cancelar-editcao">Cancelar</button>
+            </div>
+        </dialog>
+
+
+
+
+    </main>
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
