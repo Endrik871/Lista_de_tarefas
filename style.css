@@ -1,0 +1,355 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.header-bg {
+    background-color: #152B67;
+}
+
+.tarefa {
+    background-color: rgb(228, 227, 227);
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10px;
+
+
+    align-items: center;
+
+}
+
+.tarefa img {
+    width: 100%;
+}
+
+.tarefa h1 {
+    margin-bottom: 10px;
+}
+
+.completa {
+    background-color: lime;
+    padding: 10px;
+    border-radius: 10px;
+    margin-inline: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.deletar {
+    background-color: rgb(255, 38, 38);
+    padding: 10px;
+    border-radius: 10px;
+    margin-inline: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.editar {
+    background-color: rgb(38, 161, 255);
+    padding: 10px;
+    border-radius: 10px;
+    margin-inline: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.perfil {
+    border-radius: 100px;
+    background-color: white;
+}
+
+.logo {
+    align-items: center;
+    display: flex;
+}
+
+.titulo {
+    color: white;
+}
+
+.input-pesquisa-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-pesquisa-container p {
+    display: none;
+    color: rgb(255, 0, 0);
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 3px;
+}
+
+.input-pesquisa-container-erro p {
+    display: block;
+}
+
+.input-pesquisa-container input {
+    padding: 12px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    top: 20px;
+}
+
+.input-pesquisa-container input:focus {
+    border: none;
+    outline: none;
+}
+
+.input-pesquisa-container button {
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    padding: 3px;
+}
+
+.img-chack {
+    width: 60px;
+}
+
+.atualizar {
+    background-color: rgb(31, 195, 31);
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    margin: 10px 20px;
+}
+
+.cancelar-editcao {
+    background-color: rgb(233, 30, 30);
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    margin: 10px 20px;
+}
+
+.editar-modal-container::backdrop {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    animation: fadeIn .5s;
+}
+
+.main {
+
+    border: 1px solid #000;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 20px;
+    max-width: 80%;
+
+}
+
+.titulo-checklist {
+    background-color: #152B67;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+    padding: 15px 10px;
+}
+
+.titulo-checklist h1 {
+    color: white;
+}
+
+.container-adicionar {
+    border: solid #ccc;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    padding: 5px;
+
+}
+
+
+.dados-adicionar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-right: 5px;
+}
+
+#titulo {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #ccc;
+}
+
+#descricao {
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+
+}
+
+.input-add:focus {
+    border: none;
+    outline: none;
+}
+
+.container-todas-tarefas {
+    overflow-y: scroll;
+    height: 370px;
+    position: relative;
+}
+
+.editar-modal-container {
+    margin: auto;
+    width: 65%;
+    border-radius: 20px 20px 0 0;
+}
+
+.editar-modal {
+    display: flex;
+    align-self: center;
+
+    border-radius: 20px 20px 0 0;
+    border: 1px solid;
+    flex-direction: column;
+}
+
+
+.editar-modal h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.text-editar {
+    background-color: #ccc;
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+}
+
+.input-edit-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0px 20px;
+
+
+}
+
+.input-edit-container input {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+
+}
+
+.input-edit-container input:focus {
+    background-color: #f4f4f4;
+
+}
+
+.adicionar {
+    background-color: rgb(61, 61, 243);
+    border-radius: 5px;
+    width: 200px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.tarefa>p {}
+
+
+.carregando {
+    border: 5px solid #b4b4b4;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+}
+
+.carregando-nova {
+    display: none;
+    border: 5px solid #b4b4b4;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.userId {
+    margin-left: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 700px) {
+    .main{
+        
+        max-width:98%;
+        margin: 10;
+    }
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .tarefa-texts {
+        flex-direction: column;
+    }
+
+    .tarefa {
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+    }
+
+    .dadosTodo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
