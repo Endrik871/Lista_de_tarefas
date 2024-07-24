@@ -28,6 +28,7 @@ Para marcar uma tarefa como concluída, clique no ícone de check ao lado direit
 Para pesquisar uma lista de tarefas de um usuário específico, digite o ID do usuário no campo de pesquisa localizado no canto superior direito da página e pressione no icone de lupa para exibir a lista de tarefas do usuário especificado.
 Para mostrar toda a lista novamente clique fora do campo de pesquisa.
 
+Icones retirados de https://icons8.com/
 
 
 
