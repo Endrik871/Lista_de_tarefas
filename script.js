@@ -43,9 +43,9 @@ async function adicionarNovaTarefa() {
     textBotaoAdd.style.display = "none"
 
     let title = document.querySelector("#titulo").value
-    let descricao = document.querySelector("#descricao").value // esses input
-
-    if (!title || !descricao) {
+    let descricao = document.querySelector("#descricao").value 
+    if(!descricao || descricao ===" " )
+    if (!title) {
         alert("coloque os dados da tarefa")
         carregandoNova.style.display = "none"
         document.querySelector(".texto-add").style.display = "block"
@@ -75,7 +75,7 @@ async function adicionarNovaTarefa() {
                 <div style="display: flex; align-items: center;">
                 <div class="dadosTodo">
                 <p class="userId">Usuário: ${11}</p>
-                 <h2 class="titulo">${title}</h2>
+                 <h2 class="titulo-tarefa">${title}</h2>
                  <p class="descricao">${descricao}</p>
                  </div>
                  </div>
@@ -100,7 +100,7 @@ async function adicionarNovaTarefa() {
                 mostrarModalEditar(dados, document.querySelector(".tarefa"))
             }
 
-            document.querySelectorAll(".deletar").forEach((item, index) => {
+            novaTarefa.querySelectorAll(".deletar").forEach((item, index) => {
 
                 item.onclick = () => {
                     deletarTarefa(resposta.id);
@@ -117,7 +117,7 @@ async function adicionarNovaTarefa() {
 
                 const pai = novaTarefa.parentElement;
                 if (completa) {
-                    pai.querySelector('.titulo').style.textDecoration = "line-through";
+                    pai.querySelector('.titulo-tarefa').style.textDecoration = "line-through";
                     pai.querySelector(".descricao").style.textDecoration = "line-through";
                 } else {
                     pai.querySelector('h2').style.textDecoration = "none";
@@ -402,7 +402,7 @@ async function getAllToDosOfUser(userId) {
                     <div class="dadosTodo">
                     <p class="userId">${item.userId}</p>
                     <h2>${item.title}</h2>
-                    <p>Sem descrição</p>
+                    <p class="descricao">Sem descrição</p>
                     </div>
                     </div>
                     <div style="display: flex;">
@@ -435,7 +435,7 @@ async function getAllToDosOfUser(userId) {
                     userId: data[index].userId,
                     completed: data[index].completed,
                     title: pai.querySelector("h2").innerText,
-                    descricao: pai.querySelector("p").innerText
+                    descricao: pai.querySelector(".descricao").innerText
                 }
                 console.log(dados);
                 mostrarModalEditar(dados, pai);
@@ -456,7 +456,7 @@ async function getAllToDosOfUser(userId) {
                 completarTarefa(data[index].id, completa);
                 data[index].completed = completa;
 
-                const pai = item.parentElement;
+                const pai = item.parentElement.parentElement;
                 if (completa) {
                     pai.querySelector('h2').style.textDecoration = "line-through";
                     pai.querySelector("p").style.textDecoration = "line-through";
