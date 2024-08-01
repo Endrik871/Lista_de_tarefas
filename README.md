@@ -1,5 +1,7 @@
 # Lista de Tarefas
 
+[Link do site](https://endrik871.github.io/Lista_de_tarefas/)
+
 ## Sobre o Projeto
 
 Este projeto tem como objetivo principal proporcionar aos usuários uma plataforma intuitiva e acessível para listar e gerenciar todas as suas tarefas em um único lugar. O site de checklist facilita a visualização clara de tudo o que precisa ser feito, acompanhando o progresso pessoal e ajudando na organização do dia-a-dia.
