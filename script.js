@@ -42,9 +42,11 @@ async function adicionarNovaTarefa() {
     carregandoNova.style.display = "block"
     textBotaoAdd.style.display = "none"
 
-    let title = document.querySelector("#titulo").value
-    let descricao = document.querySelector("#descricao").value 
-    if(!descricao || descricao ===" " )
+    const title = document.querySelector("#titulo").value
+    const descricao = document.querySelector("#descricao").value 
+    if(!descricao){
+        descricao.value = "Sem descrição";
+    }
     if (!title) {
         alert("coloque os dados da tarefa")
         carregandoNova.style.display = "none"
@@ -115,13 +117,13 @@ async function adicionarNovaTarefa() {
                 completarTarefa(resposta.id, completa);
                 resposta.completed = completa;
 
-                const pai = novaTarefa.parentElement;
+                const pai = novaTarefa;
                 if (completa) {
                     pai.querySelector('.titulo-tarefa').style.textDecoration = "line-through";
-                    pai.querySelector(".descricao").style.textDecoration = "line-through";
+                    pai.querySelectorAll("p").forEach(item => item.style.textDecoration = "line-through");
                 } else {
                     pai.querySelector('h2').style.textDecoration = "none";
-                    pai.querySelector("p").style.textDecoration = "none";
+                    pai.querySelectorAll("p").forEach(item => item.style.textDecoration = "none");
                 }
 
             }
@@ -198,6 +200,7 @@ async function mostrarTodasTarefas() {
             }
         })
 
+
         document.querySelectorAll(".editar").forEach((item, index) => {
 
             item.onclick = () => {
@@ -209,20 +212,21 @@ async function mostrarTodasTarefas() {
                     title: divPai.querySelector("h2").innerText,
                     descricao: divPai.querySelector(".descricao").innerText // achei
                 }
-                console.log(dados);
+            
                 mostrarModalEditar(dados, divPai);
             }
         })
 
         document.querySelectorAll(".deletar").forEach((item, index) => {
-
             item.onclick = () => {
                 deletarTarefa(resposta[index].id);
                 const divPai = item.parentElement.parentElement;
                 divPai.remove();
             }
-        })
+        });
 
+        
+        
         document.querySelectorAll(".completa").forEach((item, index) => {
 
             item.onclick = () => {
@@ -286,12 +290,12 @@ function mostrarModalEditar(todo, pai) {
             modal.close();
         }
     };
-    console.log(todo)
+   
 
 
     if (todo.descricao == null) {
         todo.descricao = "Sem descrição"
-        console.log("teste")
+    
     }
 
     const mudarTitulo = document.querySelector(".titulo-editar")
@@ -299,7 +303,6 @@ function mostrarModalEditar(todo, pai) {
 
     mudarTitulo.value = todo.title;
     mudarDescricao.value = todo.descricao;
-    console.log(todo.title, todo.descricao);
 
     document.querySelector(".id-editar").innerHTML = `ID: ${todo.id}`;
     document.querySelector(".user-editar").innerHTML = `Usuário: ${todo.userId}`;
@@ -311,7 +314,7 @@ function mostrarModalEditar(todo, pai) {
             title: mudarTitulo.value,
             descricao: mudarDescricao.value
         }
-        console.log(novoDado);
+
         modal.close();
         atualizarTarefa(novoDado);
         pai.querySelector("h2").innerText = novoDado.title;
@@ -339,8 +342,6 @@ async function atualizarTarefa(todo) {
             console.log("erro da net");
         } else {
             const data = await request.json();
-            console.log(data);
-            return data;
         }
 
     }
@@ -357,7 +358,7 @@ async function deletarTarefa(id) {
             console.log("Erro ao deletar"); // n mostrou
         }
         const data = await request.json();
-        console.log(data); // {};
+
     }
 }
 
@@ -437,7 +438,7 @@ async function getAllToDosOfUser(userId) {
                     title: pai.querySelector("h2").innerText,
                     descricao: pai.querySelector(".descricao").innerText
                 }
-                console.log(dados);
+        
                 mostrarModalEditar(dados, pai);
             }
         })
@@ -459,10 +460,10 @@ async function getAllToDosOfUser(userId) {
                 const pai = item.parentElement.parentElement;
                 if (completa) {
                     pai.querySelector('h2').style.textDecoration = "line-through";
-                    pai.querySelector("p").style.textDecoration = "line-through";
+                    pai.querySelectorAll("p").forEach(p => p.style.textDecoration = "line-through");
                 } else {
                     pai.querySelector('h2').style.textDecoration = "none";
-                    pai.querySelector("p").style.textDecoration = "none";
+                    pai.querySelectorAll("p").forEach(p => p.style.textDecoration = "none");
                 }
 
             }
