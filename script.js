@@ -12,8 +12,6 @@ const pesquisar = document.querySelector(".pesquisar");
 
 const containerTarefas = document.querySelector(".container-tarefas");
 
-
-
 (function () {
 
     mostrarTodasTarefas();
